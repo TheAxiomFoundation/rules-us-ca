@@ -40,11 +40,11 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
-# Cosilico build artifacts
+# RAC build artifacts
 *.compiled.py
 *.compiled.js
 *.wasm
-.cosilico-cache/
+.rac-cache/
 
 # Test artifacts
 .pytest_cache/
