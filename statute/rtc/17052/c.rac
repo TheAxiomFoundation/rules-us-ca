@@ -25,7 +25,7 @@ parameter ca_eitc_qualifying_child_max_age:
 
 variable ca_is_qualifying_child_for_caleitc:
   imports:
-    - cosilico-us:statute/26/152/c#is_qualifying_child
+    - rac-us:statute/26/152/c#is_qualifying_child
   entity: Person
   period: Year
   dtype: Boolean

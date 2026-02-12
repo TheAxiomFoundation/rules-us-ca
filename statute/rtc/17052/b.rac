@@ -46,7 +46,7 @@ parameter ca_eitc_max_earned_income:
 
 variable ca_eitc_eligible:
   imports:
-    - cosilico-us:statute/26/1#filing_status
+    - rac-us:statute/26/1#filing_status
     - statute/rtc/17052/c#ca_eitc_qualifying_child_count
   entity: TaxUnit
   period: Year

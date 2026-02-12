@@ -1,6 +1,6 @@
-# cosilico-us-ca
+# rac-us-ca
 
-California state tax and benefit statute encodings in Cosilico DSL.
+California state tax and benefit statute encodings in RAC DSL.
 
 ## Overview
 
@@ -29,26 +29,26 @@ This repository contains machine-readable encodings of California tax law, speci
 ## Structure
 
 ```
-cosilico-us-ca/
+rac-us-ca/
 ├── statute/                    # All enacted statutes
 │   └── rtc/                   # Revenue and Taxation Code
 │       ├── 17041/             # Section 17041 - Personal Income Tax Rates
-│       │   ├── income_tax.cosilico
+│       │   ├── income_tax.rac
 │       │   └── parameters.yaml
 │       ├── 17043/             # Section 17043 - Mental Health Services Tax
-│       │   ├── mhs_tax.cosilico
+│       │   ├── mhs_tax.rac
 │       │   └── parameters.yaml
 │       ├── 17052/             # Section 17052 - CalEITC
-│       │   ├── caleitc.cosilico
+│       │   ├── caleitc.rac
 │       │   └── parameters.yaml
 │       ├── 17052.1/           # Section 17052.1 - Young Child Tax Credit
-│       │   ├── yctc.cosilico
+│       │   ├── yctc.rac
 │       │   └── parameters.yaml
 │       ├── 17054/             # Section 17054 - Standard Deduction
-│       │   ├── standard_deduction.cosilico
+│       │   ├── standard_deduction.rac
 │       │   └── parameters.yaml
 │       └── 17081/             # Section 17081 - Renter's Credit
-│           ├── renters_credit.cosilico
+│           ├── renters_credit.rac
 │           └── parameters.yaml
 │
 ├── ftb/                       # Franchise Tax Board consolidated parameters
@@ -68,9 +68,9 @@ cosilico-us-ca/
 ## Usage
 
 ```python
-from cosilico_engine import load_statute
+from rac_compile import load_statute
 
-ca_income_tax = load_statute("cosilico-us-ca/statute/rtc/17041/income_tax")
+ca_income_tax = load_statute("rac-us-ca/statute/rtc/17041/income_tax")
 
 # Calculate California income tax
 tax = ca_income_tax.calculate(
@@ -125,9 +125,9 @@ California has 9 marginal tax brackets:
 
 ## Related Repos
 
-- **cosilico-us** - Federal tax statutes (Title 26 IRC)
-- **cosilico-engine** - DSL compiler and runtime
-- **cosilico-validators** - Validation against external calculators
+- **rac-us** - Federal tax statutes (Title 26 IRC)
+- **rac-compile** - DSL compiler and runtime
+- **rac-validators** - Validation against external calculators
 
 ## License
 

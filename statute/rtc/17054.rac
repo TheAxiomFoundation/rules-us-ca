@@ -11,7 +11,7 @@ or 17048 all of the following:
 
 variable ca_personal_exemption_credit:
   imports:
-    - cosilico-us:statute/26/1#filing_status
+    - rac-us:statute/26/1#filing_status
     - statute/rtc/17054/a#ca_personal_exemption_single_base
     - statute/rtc/17054/b#ca_personal_exemption_joint_base
     - statute/rtc/17054/c#ca_senior_exemption_base

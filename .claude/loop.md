@@ -2,7 +2,7 @@
 
 Do NOT stop until ALL of the following are complete:
 
-## Federal Income Tax (cosilico-us)
+## Federal Income Tax (rac-us)
 - [x] IRC 1 - Tax rates and brackets encoded with marginal_agg
 - [ ] IRC 32 - EITC encoded (needs parameter cleanup)
 - [ ] IRC 24 - Child Tax Credit encoded (partial - h/5 done)

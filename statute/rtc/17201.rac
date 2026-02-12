@@ -1,0 +1,44 @@
+# California Revenue & Taxation Code Section 17201
+# Itemized Deductions - General
+#
+# Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17201.&lawCode=RTC
+
+text: """
+In computing taxable income under this part, there shall be allowed as
+deductions the items specified in this chapter, subject to the exceptions,
+additions, and limitations provided in this part.
+"""
+
+# California itemized deductions generally conform to federal with modifications
+variable ca_itemized_deductions:
+  imports:
+    - rac-us:statute/26/63/d#itemized_deductions as federal_itemized
+    - statute/rtc/17220#ca_mortgage_interest_deduction
+    - statute/rtc/17221#ca_state_local_tax_deduction
+    - statute/rtc/17215#ca_charitable_deduction
+  entity: TaxUnit
+  period: Year
+  dtype: Money
+  unit: "USD"
+  label: "California Itemized Deductions"
+  description: "Sum of allowable CA itemized deductions"
+  default: 0
+  formula:
+    # California itemized deductions sum
+    # Note: CA has different limits than federal (no $10k SALT cap)
+    return ca_mortgage_interest_deduction + ca_state_local_tax_deduction + ca_charitable_deduction
+  tests:
+    - name: "Sum of itemized deductions"
+      period: 2024-01
+      inputs:
+        ca_mortgage_interest_deduction: 12000
+        ca_state_local_tax_deduction: 8000
+        ca_charitable_deduction: 5000
+      expect: 25000
+    - name: "No itemized deductions"
+      period: 2024-01
+      inputs:
+        ca_mortgage_interest_deduction: 0
+        ca_state_local_tax_deduction: 0
+        ca_charitable_deduction: 0
+      expect: 0
