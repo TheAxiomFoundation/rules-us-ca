@@ -3,13 +3,8 @@
 #
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17054.&lawCode=RTC
 
-"""
-(a) A credit of fifty-two dollars ($52) for a single person, for a married
-person filing a separate return, and for the head of a household.
-"""
+# (a) A credit of fifty-two dollars ($52) for a single person, for a married
+# person filing a separate return, and for the head of a household.
 
-ca_personal_exemption_single_base:
-  description: "Single/MFS/HOH personal exemption credit base"
-  unit: "USD"
-  indexed_by: statute/rtc/17054/i
-  from 1989-01-01: 52
+variable ca_personal_exemption_single_base:
+    from 1989-01-01: 52

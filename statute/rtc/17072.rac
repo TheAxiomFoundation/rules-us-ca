@@ -3,33 +3,18 @@
 #
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17072.&lawCode=RTC
 
-"""
-Section 62 of the Internal Revenue Code, relating to adjusted gross income
-defined, shall apply, except as otherwise provided.
+# Section 62 of the Internal Revenue Code, relating to adjusted gross income
+# defined, shall apply, except as otherwise provided.
 
-(a) Section 62(a)(2)(D) of the Internal Revenue Code, relating to certain
-expenses of elementary and secondary school teachers, shall not apply.
+# (a) Section 62(a)(2)(D) of the Internal Revenue Code, relating to certain
+# expenses of elementary and secondary school teachers, shall not apply.
 
-(b) Section 62(a)(21) of the Internal Revenue Code, relating to attorneys
-fees relating to awards to whistleblowers, shall not apply.
-"""
+# (b) Section 62(a)(21) of the Internal Revenue Code, relating to attorneys
+# fees relating to awards to whistleblowers, shall not apply.
 
 # California AGI generally conforms to federal AGI with specific modifications.
 # Most adjustments are handled via Schedule CA additions and subtractions.
 
-ca_agi:
-  imports:
-    - rac-us:statute/26/62/a#adjusted_gross_income as federal_agi
-    - statute/rtc/17083#ca_agi_additions
-    - statute/rtc/17085#ca_agi_subtractions
-  entity: TaxUnit
-  period: Year
-  dtype: Money
-  unit: "USD"
-  label: "California Adjusted Gross Income"
-  description: "CA AGI = Federal AGI + CA additions - CA subtractions"
-  from 2024-01-01:
-    # Start with federal AGI
-    # Add California-specific additions (e.g., deducted items CA doesn't allow)
-    # Subtract California-specific subtractions (e.g., items CA exempts)
-    return federal_agi + ca_agi_additions - ca_agi_subtractions
+variable ca_agi:
+    entity: taxunit
+    from 2024-01-01: federal_agi + ca_agi_additions - ca_agi_subtractions

@@ -3,28 +3,15 @@
 #
 # Source: Schedule CA (540) Instructions
 
-"""
-California additions to federal adjusted gross income include items
-that are deductible for federal purposes but not for California purposes.
+# California additions to federal adjusted gross income include items
+# that are deductible for federal purposes but not for California purposes.
 
-Common additions include:
-- Teacher classroom expense deduction (IRC 62(a)(2)(D))
-- NOL carryover differences
-- Federally tax-exempt interest from non-CA municipal bonds
-"""
+# Common additions include:
+# - Teacher classroom expense deduction (IRC 62(a)(2)(D))
+# - NOL carryover differences
+# - Federally tax-exempt interest from non-CA municipal bonds
 
 # Placeholder - full implementation would sum specific addition items
-ca_agi_additions:
-  entity: TaxUnit
-  period: Year
-  dtype: Money
-  unit: "USD"
-  label: "California AGI Additions"
-  description: "Items added back to federal AGI for California purposes"
-  default: 0
-  from 2024-01-01:
-    # TODO: Sum specific addition categories
-    # - Teacher expenses (RTC 17072(a))
-    # - Out-of-state bond interest
-    # - NOL differences
-    return 0
+variable ca_agi_additions:
+    entity: taxunit
+    from 2024-01-01: 0

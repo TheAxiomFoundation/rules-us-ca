@@ -3,43 +3,19 @@
 #
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17039.&lawCode=RTC
 
-"""
-(a) For purposes of computing any credit provided in this part, the term "net
-tax" means the tax imposed under this part for the taxable year, reduced by
-the credits allowed by this part.
+# (a) For purposes of computing any credit provided in this part, the term "net
+# tax" means the tax imposed under this part for the taxable year, reduced by
+# the credits allowed by this part.
 
-(b) The "net tax" for any taxable year shall be the tax imposed by this part
-reduced by the sum of the following credits:
-(1) The credit provided by Section 17054 (personal exemption credit).
-(2) The credit provided by Section 17052 (California earned income tax credit).
-(3) The credit provided by Section 17052.1 (young child tax credit).
-"""
+# (b) The "net tax" for any taxable year shall be the tax imposed by this part
+# reduced by the sum of the following credits:
+# (1) The credit provided by Section 17054 (personal exemption credit).
+# (2) The credit provided by Section 17052 (California earned income tax credit).
+# (3) The credit provided by Section 17052.1 (young child tax credit).
 
 # This variable computes the total California state income tax liability
 # after applying all credits against the gross tax (income tax + MHS tax)
 
-ca_net_tax:
-  imports:
-    - statute/rtc/17041/a#ca_income_tax
-    - statute/rtc/17043/a#ca_mental_health_services_tax
-    - statute/rtc/17054#ca_personal_exemption_credit
-    - statute/rtc/17052/a#ca_eitc
-    - statute/rtc/17052.1/a#ca_yctc
-  entity: TaxUnit
-  period: Year
-  dtype: Money
-  unit: "USD"
-  label: "California Net Tax"
-  description: "Total CA income tax liability after all credits (per RTC 17039)"
-  from 1989-01-01:
-    # Gross tax = regular income tax + Mental Health Services Tax
-    gross_tax = ca_income_tax + ca_mental_health_services_tax
-
-    # Non-refundable credits (reduce tax to zero, not below)
-    after_nonrefundable = max(0, gross_tax - ca_personal_exemption_credit)
-
-    # Refundable credits (CalEITC and YCTC can create refunds)
-    refundable_credits = ca_eitc + ca_yctc
-
-    # Net tax (can be negative for refundable credits)
-    return after_nonrefundable - refundable_credits
+variable ca_net_tax:
+    entity: taxunit
+    from 1989-01-01: (max(0, gross_tax - ca_personal_exemption_credit)) - (ca_eitc + ca_yctc)
