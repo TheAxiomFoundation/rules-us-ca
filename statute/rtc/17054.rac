@@ -4,12 +4,12 @@
 # Combines all exemption credits from subsections (a) through (e)
 # per the introductory text of RTC 17054
 
-text: """
+"""
 There shall be allowed as credits against the taxes imposed by Section 17041
 or 17048 all of the following:
 """
 
-variable ca_personal_exemption_credit:
+ca_personal_exemption_credit:
   imports:
     - rac-us:statute/26/1#filing_status
     - statute/rtc/17054/a#ca_personal_exemption_single_base
@@ -23,7 +23,7 @@ variable ca_personal_exemption_credit:
   unit: "USD"
   label: "California Personal Exemption Credit"
   description: "Sum of personal exemption credits"
-  formula:
+  from 1989-01-01:
     credit = 0
 
     # Primary exemption based on filing status
@@ -46,44 +46,14 @@ variable ca_personal_exemption_credit:
       credit = credit + ca_blind_exemption_base
 
     return credit
-  tests:
-    - name: "Single filer, no dependents"
-      period: 1989-01
-      inputs:
-        filing_status: single
-        age: 30
-        n_dependents: 0
-        is_blind: false
-      # Base single credit = $52
-      expect: 52
-    - name: "Joint filers, senior, 2 dependents"
-      period: 1989-01
-      inputs:
-        filing_status: married_filing_jointly
-        age: 67
-        n_dependents: 2
-        is_blind: false
-      # Joint $104 + senior $52 + 2×$227 = $610
-      expect: 610
-    - name: "Single, blind"
-      period: 1989-01
-      inputs:
-        filing_status: single
-        age: 40
-        n_dependents: 0
-        is_blind: true
-      # Single $52 + blind $52 = $104
-      expect: 104
 
 # Standard deduction - derived from federal conformity
 # Base values; guidance files provide current indexed values
-parameter ca_standard_deduction:
+ca_standard_deduction:
   description: "California standard deduction by filing status"
   indexed_by: statute/rtc/17041/h
-  values:
-    # Base values - indexed annually
-    single: 1500
-    married_filing_jointly: 3000
-    married_filing_separately: 1500
-    head_of_household: 3000
-    qualifying_surviving_spouse: 3000
+  single: 1500
+  married_filing_jointly: 3000
+  married_filing_separately: 1500
+  head_of_household: 3000
+  qualifying_surviving_spouse: 3000

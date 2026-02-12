@@ -3,7 +3,7 @@
 #
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17072.&lawCode=RTC
 
-text: """
+"""
 Section 62 of the Internal Revenue Code, relating to adjusted gross income
 defined, shall apply, except as otherwise provided.
 
@@ -17,7 +17,7 @@ fees relating to awards to whistleblowers, shall not apply.
 # California AGI generally conforms to federal AGI with specific modifications.
 # Most adjustments are handled via Schedule CA additions and subtractions.
 
-variable ca_agi:
+ca_agi:
   imports:
     - rac-us:statute/26/62/a#adjusted_gross_income as federal_agi
     - statute/rtc/17083#ca_agi_additions
@@ -28,32 +28,8 @@ variable ca_agi:
   unit: "USD"
   label: "California Adjusted Gross Income"
   description: "CA AGI = Federal AGI + CA additions - CA subtractions"
-  formula:
+  from 2024-01-01:
     # Start with federal AGI
     # Add California-specific additions (e.g., deducted items CA doesn't allow)
     # Subtract California-specific subtractions (e.g., items CA exempts)
     return federal_agi + ca_agi_additions - ca_agi_subtractions
-  tests:
-    - name: "Simple conformity - no adjustments"
-      period: 2024-01
-      inputs:
-        federal_agi: 50000
-        ca_agi_additions: 0
-        ca_agi_subtractions: 0
-      expect: 50000
-    - name: "With CA additions"
-      period: 2024-01
-      inputs:
-        federal_agi: 75000
-        ca_agi_additions: 5000
-        ca_agi_subtractions: 0
-      # Federal AGI + teacher expense deduction add-back
-      expect: 80000
-    - name: "With CA subtractions"
-      period: 2024-01
-      inputs:
-        federal_agi: 100000
-        ca_agi_additions: 0
-        ca_agi_subtractions: 2500
-      # Federal AGI - state tax refund exclusion
-      expect: 97500

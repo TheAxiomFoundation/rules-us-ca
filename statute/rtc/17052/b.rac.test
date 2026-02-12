@@ -1,0 +1,27 @@
+# Tests for 17052/b.rac
+
+tests:
+    - name: "Eligible - meets all requirements"
+      inputs:
+        age: 25
+        state: "CA"
+        eitc_relevant_investment_income: 1000
+        filer_adjusted_earnings: 20000
+        ca_eitc_qualifying_child_count: 0
+      expect: true
+    - name: "Ineligible - too young without child"
+      inputs:
+        age: 17
+        state: "CA"
+        eitc_relevant_investment_income: 0
+        filer_adjusted_earnings: 5000
+        ca_eitc_qualifying_child_count: 0
+      expect: false
+    - name: "Eligible - young but has child"
+      inputs:
+        age: 17
+        state: "CA"
+        eitc_relevant_investment_income: 0
+        filer_adjusted_earnings: 5000
+        ca_eitc_qualifying_child_count: 1
+      expect: true

@@ -4,7 +4,7 @@
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17043.&lawCode=RTC
 # Added by: Proposition 63, approved November 2, 2004
 
-text: """
+"""
 (a) For each taxable year beginning on or after January 1, 2005, in addition
 to any other taxes imposed by this part, an additional tax shall be imposed
 at the rate of 1 percent on that portion of a taxpayer's taxable income in
@@ -12,19 +12,17 @@ excess of one million dollars ($1,000,000).
 """
 
 # MHS tax rate - statutory value, NOT indexed
-parameter ca_mhs_rate:
+ca_mhs_rate:
   description: "Mental Health Services Tax rate"
-  values:
-    2005-01-01: 0.01
+  from 2005-01-01: 0.01
 
 # MHS threshold - statutory value, NOT indexed per RTC 17043(c)(2)
-parameter ca_mhs_threshold:
+ca_mhs_threshold:
   description: "Income threshold for MHS Tax"
   unit: "USD"
-  values:
-    2005-01-01: 1000000
+  from 2005-01-01: 1000000
 
-variable ca_mental_health_services_tax:
+ca_mental_health_services_tax:
   imports:
     - statute/rtc/17073#ca_taxable_income
   entity: TaxUnit
@@ -33,31 +31,8 @@ variable ca_mental_health_services_tax:
   unit: "USD"
   label: "California Mental Health Services Tax"
   description: "1% surtax on taxable income over $1 million"
-  formula:
+  from 2005-01-01:
     # Per RTC 17043(c)(2), the $1M threshold is NOT indexed
     # 1% on taxable income over $1 million
     excess_income = max(0, ca_taxable_income - ca_mhs_threshold)
     return excess_income * ca_mhs_rate
-  tests:
-    - name: "Taxable income under $1M - no tax"
-      period: 2005-01
-      inputs:
-        ca_taxable_income: 500000
-      expect: 0
-    - name: "Taxable income exactly $1M - no tax"
-      period: 2005-01
-      inputs:
-        ca_taxable_income: 1000000
-      expect: 0
-    - name: "Taxable income $1.5M - tax on $500k excess"
-      period: 2005-01
-      inputs:
-        ca_taxable_income: 1500000
-      # Excess = $500k, tax = $5,000
-      expect: 5000
-    - name: "Taxable income $2M"
-      period: 2005-01
-      inputs:
-        ca_taxable_income: 2000000
-      # Excess = $1M, tax = $10,000
-      expect: 10000

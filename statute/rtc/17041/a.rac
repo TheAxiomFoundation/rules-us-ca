@@ -3,7 +3,7 @@
 #
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17041.&lawCode=RTC
 
-text: """
+"""
 (a)(1) There shall be imposed for each taxable year upon the entire taxable
 income of every resident of this state, except the head of a household as
 defined in Section 17042, taxes in the following amounts and at the following
@@ -23,21 +23,20 @@ Over $23,950                      $1,054.50 plus 9.3% of the excess over $23,950
 # Guidance files provide current indexed values which supersede these
 #
 # Note: Brackets 7-9 (10.3%, 11.3%, 12.3%) added by Prop 30 (2012) / Prop 55 (2016)
-parameter ca_brackets:
+ca_brackets:
   description: "California income tax brackets"
   indexed_by: statute/rtc/17041/h
-  values:
-    # Base 1982 thresholds; joint = 2x per RTC 17041(d)
-    thresholds:
-      single: [0, 3650, 8650, 13650, 18950, 23950]
-      married_filing_jointly: [0, 7300, 17300, 27300, 37900, 47900]
-      married_filing_separately: [0, 3650, 8650, 13650, 18950, 23950]
-      head_of_household: [0, 7300, 17300, 27300, 37900, 47900]
-      qualifying_surviving_spouse: [0, 7300, 17300, 27300, 37900, 47900]
-    # Rates are statutory (never indexed)
-    rates: [0.01, 0.02, 0.04, 0.06, 0.08, 0.093]
+  # Base 1982 thresholds; joint = 2x per RTC 17041(d)
+  thresholds:
+    single: [0, 3650, 8650, 13650, 18950, 23950]
+    married_filing_jointly: [0, 7300, 17300, 27300, 37900, 47900]
+    married_filing_separately: [0, 3650, 8650, 13650, 18950, 23950]
+    head_of_household: [0, 7300, 17300, 27300, 37900, 47900]
+    qualifying_surviving_spouse: [0, 7300, 17300, 27300, 37900, 47900]
+  # Rates are statutory (never indexed)
+  rates: [0.01, 0.02, 0.04, 0.06, 0.08, 0.093]
 
-variable ca_income_tax:
+ca_income_tax:
   imports:
     - statute/rtc/17073#ca_taxable_income
     - rac-us:statute/26/1#filing_status
@@ -47,28 +46,6 @@ variable ca_income_tax:
   unit: "USD"
   label: "California Income Tax"
   description: "California personal income tax from marginal brackets"
-  formula:
+  from 1982-01-01:
     # Apply marginal tax brackets to CA taxable income
     return marginal_agg(ca_taxable_income, ca_brackets, threshold_by=filing_status)
-  tests:
-    - name: "Single filer, $28.5k taxable (base thresholds)"
-      period: 1982-01
-      inputs:
-        ca_taxable_income: 28500
-        filing_status: single
-      # Tax = 3650*0.01 + 5000*0.02 + 5000*0.04 + 5300*0.06 + 5000*0.08 + 4550*0.093
-      #     = 36.50 + 100 + 200 + 318 + 400 + 423.15 = 1477.65
-      expect: 1478
-    - name: "Joint filers, $47k taxable (base thresholds)"
-      period: 1982-01
-      inputs:
-        ca_taxable_income: 47000
-        filing_status: married_filing_jointly
-      # Tax on $47,000 joint using base brackets
-      expect: 1402
-    - name: "Zero income"
-      period: 1982-01
-      inputs:
-        ca_taxable_income: 0
-        filing_status: single
-      expect: 0

@@ -1,0 +1,29 @@
+# Tests for 17052/c.rac
+
+tests:
+    - name: "Qualifying child under 18"
+      inputs:
+        age: 10
+        is_qualifying_child: true
+        state: "CA"
+      expect: true
+    - name: "Child 18 - too old for CalEITC"
+      inputs:
+        age: 18
+        is_qualifying_child: true
+        state: "CA"
+      expect: false
+    - name: "Not in California"
+      inputs:
+        age: 10
+        is_qualifying_child: true
+        state: "TX"
+      expect: false
+    - name: "Two qualifying children"
+      inputs:
+        ca_is_qualifying_child_for_caleitc: [true, true, false]
+      expect: 2
+    - name: "No qualifying children"
+      inputs:
+        ca_is_qualifying_child_for_caleitc: [false, false]
+      expect: 0

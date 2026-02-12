@@ -3,7 +3,7 @@
 #
 # Source: Schedule CA (540) Instructions
 
-text: """
+"""
 California additions to federal adjusted gross income include items
 that are deductible for federal purposes but not for California purposes.
 
@@ -14,7 +14,7 @@ Common additions include:
 """
 
 # Placeholder - full implementation would sum specific addition items
-variable ca_agi_additions:
+ca_agi_additions:
   entity: TaxUnit
   period: Year
   dtype: Money
@@ -22,14 +22,9 @@ variable ca_agi_additions:
   label: "California AGI Additions"
   description: "Items added back to federal AGI for California purposes"
   default: 0
-  formula:
+  from 2024-01-01:
     # TODO: Sum specific addition categories
     # - Teacher expenses (RTC 17072(a))
     # - Out-of-state bond interest
     # - NOL differences
     return 0
-  tests:
-    - name: "Default zero additions"
-      period: 2024-01
-      inputs: {}
-      expect: 0

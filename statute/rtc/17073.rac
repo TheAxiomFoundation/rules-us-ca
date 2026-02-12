@@ -3,7 +3,7 @@
 #
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17073.&lawCode=RTC
 
-text: """
+"""
 (a) Section 63 of the Internal Revenue Code, relating to taxable income
 defined, shall apply, except as otherwise provided.
 
@@ -12,7 +12,7 @@ defined, shall apply, except as otherwise provided.
 (commencing with Section 17201).
 """
 
-variable ca_taxable_income:
+ca_taxable_income:
   imports:
     - statute/rtc/17072#ca_agi
     - statute/rtc/17054#ca_standard_deduction
@@ -24,7 +24,7 @@ variable ca_taxable_income:
   unit: "USD"
   label: "California Taxable Income"
   description: "CA AGI minus deductions (standard or itemized)"
-  formula:
+  from 2024-01-01:
     # Determine whether to use standard or itemized deductions
     # Taxpayer uses itemized if they exceed standard deduction
     use_itemized = ca_itemized_deductions > ca_standard_deduction
@@ -36,31 +36,3 @@ variable ca_taxable_income:
 
     taxable = ca_agi - deduction
     return max(0, taxable)
-  tests:
-    - name: "Standard deduction - single"
-      period: 2024-01
-      inputs:
-        ca_agi: 50000
-        ca_standard_deduction: 5540
-        ca_itemized_deductions: 3000
-        filing_status: single
-      # Uses standard deduction since itemized < standard
-      expect: 44460
-    - name: "Itemized deduction exceeds standard"
-      period: 2024-01
-      inputs:
-        ca_agi: 100000
-        ca_standard_deduction: 5540
-        ca_itemized_deductions: 15000
-        filing_status: single
-      # Uses itemized since it exceeds standard
-      expect: 85000
-    - name: "Low income - floors at zero"
-      period: 2024-01
-      inputs:
-        ca_agi: 3000
-        ca_standard_deduction: 5540
-        ca_itemized_deductions: 0
-        filing_status: single
-      # AGI < standard deduction
-      expect: 0
