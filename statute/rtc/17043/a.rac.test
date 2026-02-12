@@ -1,0 +1,25 @@
+# Tests for 17043/a.rac
+
+tests:
+    - name: "Taxable income under $1M - no tax"
+      period: 2005-01
+      inputs:
+        ca_taxable_income: 500000
+      expect: 0
+    - name: "Taxable income exactly $1M - no tax"
+      period: 2005-01
+      inputs:
+        ca_taxable_income: 1000000
+      expect: 0
+    - name: "Taxable income $1.5M - tax on $500k excess"
+      period: 2005-01
+      inputs:
+        ca_taxable_income: 1500000
+      # Excess = $500k, tax = $5,000
+      expect: 5000
+    - name: "Taxable income $2M"
+      period: 2005-01
+      inputs:
+        ca_taxable_income: 2000000
+      # Excess = $1M, tax = $10,000
+      expect: 10000

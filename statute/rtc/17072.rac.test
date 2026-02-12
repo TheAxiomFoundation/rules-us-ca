@@ -1,0 +1,26 @@
+# Tests for 17072.rac
+
+tests:
+    - name: "Simple conformity - no adjustments"
+      period: 2024-01
+      inputs:
+        federal_agi: 50000
+        ca_agi_additions: 0
+        ca_agi_subtractions: 0
+      expect: 50000
+    - name: "With CA additions"
+      period: 2024-01
+      inputs:
+        federal_agi: 75000
+        ca_agi_additions: 5000
+        ca_agi_subtractions: 0
+      # Federal AGI + teacher expense deduction add-back
+      expect: 80000
+    - name: "With CA subtractions"
+      period: 2024-01
+      inputs:
+        federal_agi: 100000
+        ca_agi_additions: 0
+        ca_agi_subtractions: 2500
+      # Federal AGI - state tax refund exclusion
+      expect: 97500

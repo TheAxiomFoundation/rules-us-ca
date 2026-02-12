@@ -1,0 +1,17 @@
+# Tests for 17201.rac
+
+tests:
+    - name: "Sum of itemized deductions"
+      period: 2024-01
+      inputs:
+        ca_mortgage_interest_deduction: 12000
+        ca_state_local_tax_deduction: 8000
+        ca_charitable_deduction: 5000
+      expect: 25000
+    - name: "No itemized deductions"
+      period: 2024-01
+      inputs:
+        ca_mortgage_interest_deduction: 0
+        ca_state_local_tax_deduction: 0
+        ca_charitable_deduction: 0
+      expect: 0

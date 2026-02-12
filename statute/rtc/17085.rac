@@ -3,7 +3,7 @@
 #
 # Source: Schedule CA (540) Instructions
 
-text: """
+"""
 California subtractions from federal adjusted gross income include items
 that are taxable for federal purposes but exempt for California purposes.
 
@@ -14,7 +14,7 @@ Common subtractions include:
 """
 
 # Placeholder - full implementation would sum specific subtraction items
-variable ca_agi_subtractions:
+ca_agi_subtractions:
   entity: TaxUnit
   period: Year
   dtype: Money
@@ -22,14 +22,9 @@ variable ca_agi_subtractions:
   label: "California AGI Subtractions"
   description: "Items subtracted from federal AGI for California purposes"
   default: 0
-  formula:
+  from 2024-01-01:
     # TODO: Sum specific subtraction categories
     # - US obligation interest
     # - Social Security (CA exempt)
     # - Lottery winnings
     return 0
-  tests:
-    - name: "Default zero subtractions"
-      period: 2024-01
-      inputs: {}
-      expect: 0

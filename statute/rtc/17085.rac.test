@@ -1,0 +1,7 @@
+# Tests for 17085.rac
+
+tests:
+    - name: "Default zero subtractions"
+      period: 2024-01
+      inputs: {}
+      expect: 0

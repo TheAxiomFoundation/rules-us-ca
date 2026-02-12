@@ -3,7 +3,7 @@
 #
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17052.&lawCode=RTC
 
-text: """
+"""
 (b)(1) For purposes of this section, "eligible individual" means an
 individual who meets all of the following requirements:
 
@@ -25,26 +25,23 @@ in the annual Budget Act.
 year is less than the amount that would reduce the credit to zero.
 """
 
-parameter ca_eitc_min_age:
+ca_eitc_min_age:
   description: "Minimum age for CalEITC without qualifying child"
-  values:
-    2015-01-01: 18
+  from 2015-01-01: 18
 
-parameter ca_eitc_max_investment_income:
+ca_eitc_max_investment_income:
   description: "Maximum investment income for CalEITC eligibility"
   unit: "USD"
   indexed_by: statute/rtc/17052/g
-  values:
-    2015-01-01: 3650
+  from 2015-01-01: 3650
 
-parameter ca_eitc_max_earned_income:
+ca_eitc_max_earned_income:
   description: "Maximum earned income for CalEITC (set by Budget Act)"
   unit: "USD"
   reference: "Set by annual Budget Act, not statute"
-  values:
-    2015-01-01: 14161
+  from 2015-01-01: 14161
 
-variable ca_eitc_eligible:
+ca_eitc_eligible:
   imports:
     - rac-us:statute/26/1#filing_status
     - statute/rtc/17052/c#ca_eitc_qualifying_child_count
@@ -53,7 +50,7 @@ variable ca_eitc_eligible:
   dtype: Boolean
   label: "CalEITC Eligible"
   description: "Whether tax unit is eligible for CalEITC"
-  formula:
+  from 2015-01-01:
     # Age requirement: 18+ or has qualifying child
     has_qualifying_child = ca_eitc_qualifying_child_count > 0
     meets_age_requirement = (age >= ca_eitc_min_age) | has_qualifying_child
@@ -73,28 +70,3 @@ variable ca_eitc_eligible:
       meets_investment_limit &
       meets_earned_income_limit
     )
-  tests:
-    - name: "Eligible - meets all requirements"
-      inputs:
-        age: 25
-        state: "CA"
-        eitc_relevant_investment_income: 1000
-        filer_adjusted_earnings: 20000
-        ca_eitc_qualifying_child_count: 0
-      expect: true
-    - name: "Ineligible - too young without child"
-      inputs:
-        age: 17
-        state: "CA"
-        eitc_relevant_investment_income: 0
-        filer_adjusted_earnings: 5000
-        ca_eitc_qualifying_child_count: 0
-      expect: false
-    - name: "Eligible - young but has child"
-      inputs:
-        age: 17
-        state: "CA"
-        eitc_relevant_investment_income: 0
-        filer_adjusted_earnings: 5000
-        ca_eitc_qualifying_child_count: 1
-      expect: true

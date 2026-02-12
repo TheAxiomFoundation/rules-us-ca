@@ -4,7 +4,7 @@
 # Source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=17053.5.&lawCode=RTC
 # FTB: https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html
 
-text: """
+"""
 (a) For each taxable year beginning on or after January 1, 1972, there
 shall be allowed as a credit against the "net tax" a credit to a
 qualified renter.
@@ -24,33 +24,29 @@ specified in subdivision (b) for inflation.
 # Joint/HoH/QSS: $104,842
 # Single/MFS: $52,421
 
-parameter ca_renter_credit_amount_joint:
+ca_renter_credit_amount_joint:
   description: "Renter credit amount for joint filers, HoH, QSS"
   unit: "USD"
-  values:
-    1972-01-01: 120
+  from 1972-01-01: 120
 
-parameter ca_renter_credit_amount_single:
+ca_renter_credit_amount_single:
   description: "Renter credit amount for single filers"
   unit: "USD"
-  values:
-    1972-01-01: 60
+  from 1972-01-01: 60
 
-parameter ca_renter_credit_threshold_joint:
+ca_renter_credit_threshold_joint:
   description: "AGI threshold for joint filers, HoH, QSS"
   unit: "USD"
   indexed_by: statute/rtc/17041/h
-  values:
-    1972-01-01: 50000
+  from 1972-01-01: 50000
 
-parameter ca_renter_credit_threshold_single:
+ca_renter_credit_threshold_single:
   description: "AGI threshold for single filers"
   unit: "USD"
   indexed_by: statute/rtc/17041/h
-  values:
-    1972-01-01: 25000
+  from 1972-01-01: 25000
 
-variable ca_renter_credit:
+ca_renter_credit:
   imports:
     - statute/rtc/17072#ca_agi
     - rac-us:statute/26/1#filing_status
@@ -60,7 +56,7 @@ variable ca_renter_credit:
   unit: "USD"
   label: "California Renter's Credit"
   description: "Nonrefundable credit for qualified renters"
-  formula:
+  from 1972-01-01:
     # Check if renter (would need rental input variable)
     # For now, assume is_renter input provided
 
@@ -83,35 +79,3 @@ variable ca_renter_credit:
       return amount
     else:
       return 0
-  tests:
-    - name: "Single renter under threshold"
-      period: 2024-01
-      inputs:
-        ca_agi: 40000
-        filing_status: single
-        is_renter: true
-      # Uses indexed 2024 threshold; base amount $60
-      expect: 60
-    - name: "Joint renter under threshold"
-      period: 2024-01
-      inputs:
-        ca_agi: 80000
-        filing_status: married_filing_jointly
-        is_renter: true
-      # Uses indexed 2024 threshold; base amount $120
-      expect: 120
-    - name: "Single over threshold - no credit"
-      period: 2024-01
-      inputs:
-        ca_agi: 60000
-        filing_status: single
-        is_renter: true
-      # Over base threshold ($25k)
-      expect: 0
-    - name: "Not a renter - no credit"
-      period: 2024-01
-      inputs:
-        ca_agi: 20000
-        filing_status: single
-        is_renter: false
-      expect: 0
