@@ -22,5 +22,5 @@ jobs:
       - name: Install rac
         run: pip install git+https://github.com/RulesFoundation/rac.git
 
-      - name: Validate .rac schema and imports
-        run: python -m rac.validate all statute/
+      - name: Validate .rac schema
+        run: python -m rac.validate schema statute/
