@@ -6,5 +6,5 @@
 # (e) A credit for personal exemption of fifty-two dollars ($52) if the taxpayer
 # is blind on the last day of the taxable year.
 
-variable ca_blind_exemption_base:
+ca_blind_exemption_base:
     from 1989-01-01: 52

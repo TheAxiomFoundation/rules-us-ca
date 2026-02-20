@@ -10,6 +10,6 @@
 # "itemized deductions" means the deductions allowable by Chapter 4
 # (commencing with Section 17201).
 
-variable ca_taxable_income:
+ca_taxable_income:
     entity: taxunit
     from 2024-01-01: max(0, (ca_agi - deduction))

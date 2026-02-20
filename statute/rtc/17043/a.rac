@@ -10,15 +10,15 @@
 # excess of one million dollars ($1,000,000).
 
 # MHS tax rate - statutory value, NOT indexed
-variable ca_mhs_rate:
+ca_mhs_rate:
     from 2005-01-01: 0.01
 
 
 # MHS threshold - statutory value, NOT indexed per RTC 17043(c)(2)
-variable ca_mhs_threshold:
+ca_mhs_threshold:
     from 2005-01-01: 1000000
 
 
-variable ca_mental_health_services_tax:
+ca_mental_health_services_tax:
     entity: taxunit
     from 2005-01-01: (max(0, ca_taxable_income - ca_mhs_threshold)) * ca_mhs_rate

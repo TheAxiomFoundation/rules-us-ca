@@ -22,22 +22,22 @@
 # Joint/HoH/QSS: $104,842
 # Single/MFS: $52,421
 
-variable ca_renter_credit_amount_joint:
+ca_renter_credit_amount_joint:
     from 1972-01-01: 120
 
 
-variable ca_renter_credit_amount_single:
+ca_renter_credit_amount_single:
     from 1972-01-01: 60
 
 
-variable ca_renter_credit_threshold_joint:
+ca_renter_credit_threshold_joint:
     from 1972-01-01: 50000
 
 
-variable ca_renter_credit_threshold_single:
+ca_renter_credit_threshold_single:
     from 1972-01-01: 25000
 
 
-variable ca_renter_credit:
+ca_renter_credit:
     entity: taxunit
     from 1972-01-01: 0

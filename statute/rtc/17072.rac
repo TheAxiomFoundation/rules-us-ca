@@ -15,6 +15,6 @@
 # California AGI generally conforms to federal AGI with specific modifications.
 # Most adjustments are handled via Schedule CA additions and subtractions.
 
-variable ca_agi:
+ca_agi:
     entity: taxunit
     from 2024-01-01: federal_agi + ca_agi_additions - ca_agi_subtractions

@@ -12,6 +12,6 @@
 # - California lottery winnings
 
 # Placeholder - full implementation would sum specific subtraction items
-variable ca_agi_subtractions:
+ca_agi_subtractions:
     entity: taxunit
     from 2024-01-01: 0

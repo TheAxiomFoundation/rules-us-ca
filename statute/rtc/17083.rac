@@ -12,6 +12,6 @@
 # - Federally tax-exempt interest from non-CA municipal bonds
 
 # Placeholder - full implementation would sum specific addition items
-variable ca_agi_additions:
+ca_agi_additions:
     entity: taxunit
     from 2024-01-01: 0

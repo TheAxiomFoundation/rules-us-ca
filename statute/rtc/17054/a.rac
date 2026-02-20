@@ -6,5 +6,5 @@
 # (a) A credit of fifty-two dollars ($52) for a single person, for a married
 # person filing a separate return, and for the head of a household.
 
-variable ca_personal_exemption_single_base:
+ca_personal_exemption_single_base:
     from 1989-01-01: 52

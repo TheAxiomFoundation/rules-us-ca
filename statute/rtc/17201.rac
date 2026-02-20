@@ -8,6 +8,6 @@
 # additions, and limitations provided in this part.
 
 # California itemized deductions generally conform to federal with modifications
-variable ca_itemized_deductions:
+ca_itemized_deductions:
     entity: taxunit
     from 2024-01-01: ca_mortgage_interest_deduction + ca_state_local_tax_deduction + ca_charitable_deduction

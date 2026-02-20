@@ -7,12 +7,12 @@
 # There shall be allowed as credits against the taxes imposed by Section 17041
 # or 17048 all of the following:
 
-variable ca_personal_exemption_credit:
+ca_personal_exemption_credit:
     entity: taxunit
     from 1989-01-01: credit + ca_blind_exemption_base
 
 
 # Standard deduction - derived from federal conformity
 # Base values; guidance files provide current indexed values
-variable ca_standard_deduction:
+ca_standard_deduction:
     from 2024-01-01: 0

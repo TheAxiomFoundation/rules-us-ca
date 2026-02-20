@@ -6,5 +6,5 @@
 # (d)(1) A credit of two hundred twenty-seven dollars ($227) for each dependent
 # who meets the requirements of Section 151(c) of the Internal Revenue Code.
 
-variable ca_dependent_exemption_base:
+ca_dependent_exemption_base:
     from 1989-01-01: 227

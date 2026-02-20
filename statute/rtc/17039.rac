@@ -16,6 +16,6 @@
 # This variable computes the total California state income tax liability
 # after applying all credits against the gross tax (income tax + MHS tax)
 
-variable ca_net_tax:
+ca_net_tax:
     entity: taxunit
     from 1989-01-01: (max(0, gross_tax - ca_personal_exemption_credit)) - (ca_eitc + ca_yctc)

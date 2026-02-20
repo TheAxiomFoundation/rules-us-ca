@@ -6,5 +6,5 @@
 # (b) A credit of one hundred four dollars ($104) for a surviving spouse or for
 # married persons filing a joint return.
 
-variable ca_personal_exemption_joint_base:
+ca_personal_exemption_joint_base:
     from 1989-01-01: 104

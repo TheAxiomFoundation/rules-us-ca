@@ -20,32 +20,32 @@
 # after January 1, 2015, shall be 0 percent.
 
 # Adjustment factor - set by annual Budget Act, currently 85%
-variable ca_eitc_adjustment_factor:
+ca_eitc_adjustment_factor:
     from 2015-01-01: 0.85
 
 
 # Phase-in rates by number of qualifying children (base IRC 32 rates)
 # These are multiplied by adjustment_factor in the formula
-variable ca_eitc_phase_in_rate:
+ca_eitc_phase_in_rate:
     from 2024-01-01: 0
 
 
 # Earned income amount (phase-in ends) by child count - indexed annually
 # Base 2015 values, indexed to CA CPI
-variable ca_eitc_earned_income_amount:
+ca_eitc_earned_income_amount:
     from 2024-01-01: 0
 
 
 # Phase-out rates (same as phase-in rates per IRC 32)
-variable ca_eitc_phase_out_rate:
+ca_eitc_phase_out_rate:
     from 2024-01-01: 0
 
 
 # Phase-out start amounts
-variable ca_eitc_phase_out_start:
+ca_eitc_phase_out_start:
     from 2024-01-01: 0
 
 
-variable ca_eitc:
+ca_eitc:
     entity: taxunit
     from 2015-01-01: ca_eitc_eligible * (max(0, max_credit - phase_out_reduction))

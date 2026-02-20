@@ -6,5 +6,5 @@
 # (c) A credit of fifty-two dollars ($52) if the individual is 65 years of age
 # or older on the last day of the taxable year.
 
-variable ca_senior_exemption_base:
+ca_senior_exemption_base:
     from 1989-01-01: 52
