@@ -1,8 +1,9 @@
 # rac-us-ca
 
-**California state tax and benefit statute encodings.**
+**California state tax and benefit encodings.**
 
-All California-specific .rac files belong here, NOT in rac-compile or rac-us.
+All California-specific .rac files and California-administered source slices
+belong here, NOT in rac-compile or rac-us.
 
 ## Structure
 
@@ -30,6 +31,9 @@ rac-us-ca/
 └── tests/                # Validation test cases
     └── integration/
 ```
+
+Additional jurisdiction-local source slices belong under `sources/slices/`, for
+example California SNAP overlays administered by CDSS.
 
 ## References
 
@@ -86,3 +90,10 @@ California has 9 marginal tax brackets ranging from 1% to 12.3%:
 - **rac-us** - Federal tax statutes (Title 26 IRC)
 - **rac-compile** - DSL compiler and runtime
 - **rac-validators** - Validation against external calculators
+
+## Repo Boundary
+
+- Federal statute cores and national current-effective SNAP layers belong in
+  `rac-us`.
+- California-administered overlays belong here, even when they sit on top of a
+  federal program like SNAP.
