@@ -1,10 +1,10 @@
 # rac-us-ca
 
-California state tax and benefit statute encodings in RAC DSL.
+California state tax and benefit encodings in RAC DSL.
 
 ## Overview
 
-This repository contains machine-readable encodings of California tax law, specifically the California Revenue and Taxation Code (RTC). These encodings compile to Python, JavaScript, and WASM for use in tax calculators and microsimulation.
+This repository contains machine-readable encodings of California-administered law and policy, including California tax law and delegated California SNAP overlays. These encodings compile to Python, JavaScript, and WASM for use in calculators, microsimulation, and policy validation.
 
 ## Coverage
 
@@ -18,6 +18,11 @@ This repository contains machine-readable encodings of California tax law, speci
 | **RTC 17052** | California Earned Income Tax Credit (CalEITC) | Complete |
 | **RTC 17052.1** | Young Child Tax Credit (YCTC) | Complete |
 | **RTC 17081** | Renter's Credit | Complete |
+
+### Jurisdiction-Local Source Slices
+
+- California SNAP delegated overlays and source slices under `sources/slices/`
+- California tax sources and parameter publications under `ftb/`
 
 ### Planned
 
@@ -58,6 +63,9 @@ rac-us-ca/
 │   │   └── parameters.yaml    # 2025 tax year (projected)
 │   └── 2026/
 │       └── parameters.yaml    # 2026 tax year (projected)
+│
+├── sources/slices/            # Jurisdiction-local source corpus
+│   └── cdss/calfresh/         # California SNAP delegated overlays
 │
 └── tests/                     # Validation test cases
     └── integration/
@@ -123,9 +131,15 @@ California has 9 marginal tax brackets:
 | 2025 | Projected | ~3.1% CCPI adjustment |
 | 2026 | Projected | ~2.5% inflation estimate |
 
+## Repo Boundary
+
+Federal statute cores and national current-effective SNAP layers belong in `rac-us`.
+California-administered overlays belong here, even when they sit on top of a
+federal program like SNAP.
+
 ## Related Repos
 
-- **rac-us** - Federal tax statutes (Title 26 IRC)
+- **rac-us** - Federal statutes and federal current-effective policy layers
 - **rac-compile** - DSL compiler and runtime
 - **rac-validators** - Validation against external calculators
 

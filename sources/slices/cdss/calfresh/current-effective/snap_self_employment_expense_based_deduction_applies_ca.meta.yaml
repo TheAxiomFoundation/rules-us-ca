@@ -1,0 +1,7 @@
+version: 1
+relations:
+  - relation: sets
+    target: cfr/7/273.11/b/3#snap_self_employment_expense_based_deduction_applies
+    jurisdiction: CA
+    delegated_from: cfr/7/273.11/b/3
+    note: California elects the SNAP self-employment actual-expense option under the federal state-option framework.
