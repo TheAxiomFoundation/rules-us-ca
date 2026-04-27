@@ -13,4 +13,4 @@ This repo stores California RuleSpec source registry materials and related polic
 
 - Reintroduce legacy executable formula payloads.
 - Put federal source slices or federal RuleSpec outputs here; use `rules-us`.
-- Add AKN/XML source payloads to Git.
+- Add generated source payloads to Git.
