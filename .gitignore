@@ -55,3 +55,6 @@ htmlcov/
 .env
 .env.local
 *.local.md
+
+# Local issue tracker state
+.beads/
