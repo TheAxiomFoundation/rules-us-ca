@@ -40,11 +40,10 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
-# RAC build artifacts
+# Build artifacts
 *.compiled.py
 *.compiled.js
 *.wasm
-.rac-cache/
 
 # Test artifacts
 .pytest_cache/

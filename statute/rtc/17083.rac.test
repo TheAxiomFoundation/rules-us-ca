@@ -1,7 +1,0 @@
-# Tests for 17083.rac
-
-tests:
-    - name: "Default zero additions"
-      period: 2024-01
-      inputs: {}
-      expect: 0
