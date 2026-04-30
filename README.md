@@ -12,7 +12,7 @@ California RuleSpec encodings and source registry metadata.
 
 ## Conventions
 
-Use RuleSpec YAML for encoded rules. Do not add legacy `statute/`,
-`parameters.yaml`, `tests.yaml`, `tests/*.yaml`, or `.rac` artifacts.
+Use RuleSpec YAML for encoded rules. Do not add singular rule roots, separate
+parameter/test fixture files, or generated formula artifacts.
 
 Federal materials belong in `rules-us`. California-administered materials belong here.
