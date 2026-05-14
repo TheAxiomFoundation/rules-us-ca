@@ -6,7 +6,7 @@
     },
     {
       "path": "regulations/mpp/63-408/214.test.yaml",
-      "sha256": "73a73c6d48f97291db3bef9ca5c7b6427a107ad2e1320633f0ba8793f37d8d43"
+      "sha256": "ba57ec3b29d8174d57bec5e83c32041afbbd260f9a57bee193be941e5d9c0772"
     }
   ],
   "axiom_encode_git": {
@@ -19,7 +19,7 @@
   "citation": "us-ca/regulation/mpp/63-408.214",
   "context_manifest_file": null,
   "context_manifest_sha256": null,
-  "generated_at": "2026-05-14T14:54:51.426789+00:00",
+  "generated_at": "2026-05-14T15:01:15.175202+00:00",
   "generated_output_file": null,
   "generated_output_root": null,
   "generated_output_sha256": null,
@@ -31,7 +31,7 @@
   "signature": {
     "algorithm": "hmac-sha256",
     "key_id": "axiom-encode-apply-v1",
-    "value": "d58ff5c885eee75c7324787c542350c3bf9bb8cba181989ea0635836e62ff6e7"
+    "value": "a4150a85a65b1ebe9a325715440a1fb19666644b594e1877f2c5fc557b323fa3"
   },
   "tool": "axiom-encode encode --apply (recovered from sandbox)",
   "trace_file": null,
