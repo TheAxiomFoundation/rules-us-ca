@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-503.328, timing condition for applying a different income eligibility test
     metadata:
       proof:
@@ -39,7 +39,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-503.328, CWD shall apply the different test at the first specified event
     metadata:
       proof:

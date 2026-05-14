@@ -84,7 +84,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.546(a), sentences 1 and 4
     metadata:
       proof:
@@ -108,7 +108,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.546(a), sentences 1-2
     metadata:
       proof:
@@ -143,7 +143,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.546(a), sentence 3
     metadata:
       proof:

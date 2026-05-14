@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.741, MR and QR clauses
     metadata:
       proof:

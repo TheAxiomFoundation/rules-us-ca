@@ -10,7 +10,7 @@ rules:
   - name: face_to_face_interview_interval_months
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-300.464(a), sentence 1
     metadata:
       proof:
@@ -28,7 +28,7 @@ rules:
   - name: pa_ga_multiple_recertification_period_months
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-300.464(b), sentence 1
     metadata:
       proof:
@@ -46,7 +46,7 @@ rules:
   - name: verification_period_after_interview_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-300.464(c)
     metadata:
       proof:
@@ -65,7 +65,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-300.464(a)
     metadata:
       proof:
@@ -93,7 +93,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-300.464(b), sentence 1
     metadata:
       proof:
@@ -114,7 +114,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-300.464(b), sentence 2
     metadata:
       proof:
@@ -134,7 +134,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-300.464(c)
     metadata:
       proof:

@@ -10,7 +10,7 @@ rules:
   - name: pending_notice_required_action_minimum_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.442(a), sentence 1
     metadata:
       proof:
@@ -28,7 +28,7 @@ rules:
   - name: missing_verification_pending_deadline_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.442(a), sentence 2
     metadata:
       proof:
@@ -47,7 +47,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.442(a), sentence 1
     metadata:
       proof:
@@ -66,7 +66,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.442(a), sentence 2
     metadata:
       proof:
@@ -87,7 +87,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.442(b)
     metadata:
       proof:

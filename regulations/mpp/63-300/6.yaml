@@ -29,7 +29,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-300.6, sentences 1-2
     metadata:
       proof:

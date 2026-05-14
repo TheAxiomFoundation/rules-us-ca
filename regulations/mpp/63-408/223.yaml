@@ -28,7 +28,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Week
+    period: Month
     source: 63-408.223, reduced work effort clause
     metadata:
       proof:

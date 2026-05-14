@@ -28,7 +28,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-407.231, first sentence
     metadata:
       proof:

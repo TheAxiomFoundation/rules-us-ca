@@ -152,7 +152,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(a)(1)
     metadata:
       proof:
@@ -171,7 +171,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(a)(1)
     metadata:
       proof:
@@ -190,7 +190,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(a)(2)(A)-(B)
     metadata:
       proof:
@@ -209,7 +209,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(b)
     metadata:
       proof:
@@ -228,7 +228,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(b)
     metadata:
       proof:
@@ -247,7 +247,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(c), (d)(MR), (d)(QR)
     metadata:
       proof:
@@ -266,7 +266,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(d)(MR), (QR)
     metadata:
       proof:
@@ -285,7 +285,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(e)(2)(E)
     metadata:
       proof:
@@ -304,7 +304,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-300.5(e)(2)(D)2
     metadata:
       proof:

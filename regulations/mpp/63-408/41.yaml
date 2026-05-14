@@ -33,7 +33,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-408.41(a)-(j)
     metadata:
       proof:

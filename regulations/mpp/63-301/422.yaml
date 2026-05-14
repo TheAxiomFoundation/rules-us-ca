@@ -10,7 +10,7 @@ rules:
   - name: missing_verification_pending_limit_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.422(a)
     metadata:
       proof:
@@ -29,7 +29,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.422(a)
     metadata:
       proof:
@@ -50,7 +50,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.422(b)
     metadata:
       proof:

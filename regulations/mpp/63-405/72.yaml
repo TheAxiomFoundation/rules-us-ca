@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-405.72, operative text
     metadata:
       proof:

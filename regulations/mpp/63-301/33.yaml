@@ -130,7 +130,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, normal processing row
     metadata:
       proof:
@@ -153,7 +153,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, missed first interview row
     metadata:
       proof:
@@ -173,7 +173,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, missed first interview row
     metadata:
       proof:
@@ -194,7 +194,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, missed first interview row
     metadata:
       proof:
@@ -215,7 +215,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, second interview scheduled row
     metadata:
       proof:
@@ -235,7 +235,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, missed second interview row
     metadata:
       proof:
@@ -254,7 +254,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, missed second interview row
     metadata:
       proof:
@@ -274,7 +274,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, missed second interview row
     metadata:
       proof:
@@ -293,7 +293,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, verification row
     metadata:
       proof:
@@ -313,7 +313,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301 handbook chart, verification row
     metadata:
       proof:

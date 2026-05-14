@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-406.22, operative enrollment-status rule
     metadata:
       proof:

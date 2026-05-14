@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-405.42, second sentence
     metadata:
       proof:
@@ -29,7 +29,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-405.42, third sentence
     metadata:
       proof:

@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Money
-    period: Day
+    period: Month
     unit: USD
     source: 63-503.241
     metadata:

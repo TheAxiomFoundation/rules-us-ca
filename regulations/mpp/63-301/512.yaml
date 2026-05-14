@@ -10,7 +10,7 @@ rules:
   - name: migrant_or_seasonal_farmworker_liquid_resource_limit
     kind: parameter
     dtype: Money
-    period: Day
+    period: Month
     unit: USD
     source: 63-301.512, liquid resources clause
     metadata:
@@ -30,7 +30,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.512
     metadata:
       proof:

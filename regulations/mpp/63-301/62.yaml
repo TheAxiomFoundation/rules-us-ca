@@ -10,7 +10,7 @@ rules:
   - name: food_stamp_benefit_delay_limit_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.62, sentence 3
     metadata:
       proof:
@@ -29,7 +29,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.62, sentence 1
     metadata:
       proof:
@@ -48,7 +48,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.62, sentence 2
     metadata:
       proof:
@@ -67,7 +67,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.62, sentence 3
     metadata:
       proof:

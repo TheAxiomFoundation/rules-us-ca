@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-408.111
     metadata:
       proof:

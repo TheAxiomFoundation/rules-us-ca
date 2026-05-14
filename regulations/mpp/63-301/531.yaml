@@ -11,7 +11,7 @@ rules:
   - name: expedited_service_delivery_deadline_calendar_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.531(a), sentence 1
     metadata:
       proof:
@@ -29,7 +29,7 @@ rules:
   - name: weekend_calendar_days_counted_for_delivery_standard
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.531(a), sentence 2
     metadata:
       proof:
@@ -48,7 +48,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.531(a)
     metadata:
       proof:
@@ -96,7 +96,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.531(b)
     metadata:
       proof:

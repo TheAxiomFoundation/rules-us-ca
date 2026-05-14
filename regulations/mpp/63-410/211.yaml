@@ -67,7 +67,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-410.211(a)(1)(QR), education/training and employment exception
     metadata:
       proof:
@@ -88,7 +88,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-410.211(a)(1)(QR), mandatory mid-quarter reporting requirement
     metadata:
       proof:
@@ -128,7 +128,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-410.211(a)(1)(QR), report within deadline
     metadata:
       proof:
@@ -153,7 +153,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Week
+    period: Month
     source: 63-410.211(b), in-kind income hours
     metadata:
       proof:

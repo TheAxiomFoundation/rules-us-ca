@@ -10,7 +10,7 @@ rules:
   - name: required_action_deadline_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.421(a)
     metadata:
       proof:
@@ -29,7 +29,7 @@ rules:
     kind: derived
     entity: Household
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.421(a)
     metadata:
       proof:

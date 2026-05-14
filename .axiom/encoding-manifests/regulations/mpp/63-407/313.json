@@ -19,7 +19,7 @@
   "citation": "us-ca/regulation/mpp/63-407.313",
   "context_manifest_file": null,
   "context_manifest_sha256": null,
-  "generated_at": "2026-05-14T15:43:55.247180+00:00",
+  "generated_at": "2026-05-14T16:11:27.051529+00:00",
   "generated_output_file": null,
   "generated_output_root": null,
   "generated_output_sha256": null,
@@ -31,7 +31,7 @@
   "signature": {
     "algorithm": "hmac-sha256",
     "key_id": "axiom-encode-apply-v1",
-    "value": "78d2039d7484e5894311b2d2068792549c00279e45b2f1cf6a60b29a360ab441"
+    "value": "6fda905d68ad0893148ec612e8be4fad81d887e7001e8937e5b6198c7ebc81ad"
   },
   "tool": "axiom-encode encode --apply (recovered from sandbox)",
   "trace_file": null,

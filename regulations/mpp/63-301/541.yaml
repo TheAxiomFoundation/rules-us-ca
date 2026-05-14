@@ -10,7 +10,7 @@ rules:
   - name: nonfederal_qc_refusal_reapplication_waiting_period_days
     kind: parameter
     dtype: Count
-    period: Day
+    period: Month
     source: 63-301.541(b)(1), nonfederal QC reviewer clause
     metadata:
       proof:
@@ -47,7 +47,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.541(a)
     metadata:
       proof:
@@ -66,7 +66,7 @@ rules:
     kind: derived
     entity: SnapUnit
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.541(b), no-delay sentence
     metadata:
       proof:
@@ -85,7 +85,7 @@ rules:
     kind: derived
     entity: SnapUnit
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.541(b), postponement sentence
     metadata:
       proof:
@@ -162,7 +162,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.541(d), first sentence
     metadata:
       proof:
@@ -181,7 +181,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-301.541(d), second sentence
     metadata:
       proof:

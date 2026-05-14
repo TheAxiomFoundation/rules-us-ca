@@ -27,7 +27,7 @@ rules:
     kind: derived
     entity: Person
     dtype: Judgment
-    period: Day
+    period: Month
     source: MPP 63-405.126(a), handbook
     metadata:
       proof:

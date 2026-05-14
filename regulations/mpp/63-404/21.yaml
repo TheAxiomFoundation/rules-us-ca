@@ -11,7 +11,7 @@ rules:
     kind: derived
     entity: SnapUnit
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-404.21 first sentence
     metadata:
       proof:
@@ -31,7 +31,7 @@ rules:
     kind: derived
     entity: SnapUnit
     dtype: Judgment
-    period: Day
+    period: Month
     source: 63-404.21 second sentence
     metadata:
       proof:
