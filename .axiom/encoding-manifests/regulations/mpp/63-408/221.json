@@ -1,0 +1,39 @@
+{
+  "applied_files": [
+    {
+      "path": "regulations/mpp/63-408/221.yaml",
+      "sha256": "16906ae998a83e7b55a442e0cf24165ec9a23c445cec31e1eec473d49787d61b"
+    },
+    {
+      "path": "regulations/mpp/63-408/221.test.yaml",
+      "sha256": "b5e5e39b040302ca1996b848aba932872a9b1bcfd840f22c310b5ff61b92197a"
+    }
+  ],
+  "axiom_encode_git": {
+    "commit": "a687bdf48d4c7f1fc95dffee0410b24dfcebd932",
+    "dirty_tracked": false,
+    "root": "/Users/pavelmakarchuk/axiom-encode"
+  },
+  "axiom_encode_version": "0.2.68",
+  "backend": "codex",
+  "citation": "us-ca/regulation/mpp/63-408.221",
+  "context_manifest_file": null,
+  "context_manifest_sha256": null,
+  "generated_at": "2026-05-14T14:54:51.427014+00:00",
+  "generated_output_file": null,
+  "generated_output_root": null,
+  "generated_output_sha256": null,
+  "generation_prompt_sha256": null,
+  "model": "gpt-5.5",
+  "run_id": null,
+  "runner": "codex:gpt-5.5",
+  "schema_version": "axiom-encode/applied-rulespec/v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "key_id": "axiom-encode-apply-v1",
+    "value": "55b7b5b7442bdbb96fe4912ff6616c7a1b160117541df91f1135a01d6119145b"
+  },
+  "tool": "axiom-encode encode --apply (recovered from sandbox)",
+  "trace_file": null,
+  "trace_sha256": null
+}
